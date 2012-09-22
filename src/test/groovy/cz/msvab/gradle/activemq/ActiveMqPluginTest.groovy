@@ -29,7 +29,7 @@ class ActiveMqPluginTest {
         def config = project.convention.findByName('activemq')
 
         // then
-        assertThat(config, Matchers.instanceOf(ActiveMqPluginConvention.class))
+        assertThat(config, Matchers.instanceOf(ActiveMqPluginExtension.class))
     }
 
     @Test

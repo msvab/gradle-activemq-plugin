@@ -6,12 +6,12 @@ import org.junit.Test
 
 import static org.hamcrest.MatcherAssert.assertThat
 
-public class ActiveMqPluginConventionTest {
+public class ActiveMqPluginExtensionTest {
 
     @Test
     void shouldHaveDefaultsForConfiguration() {
         // given
-        ActiveMqPluginConvention config = new ActiveMqPluginConvention()
+        ActiveMqPluginExtension config = new ActiveMqPluginExtension()
 
         // then
         assertThat(config.port, Matchers.is(61616))

@@ -6,8 +6,8 @@ import org.gradle.api.Project
 class ActiveMqPlugin implements Plugin<Project> {
 
     void apply(Project project) {
-        project.convention.add('activemq', new ActiveMqPluginConvention())
+        project.extensions.create('activemq', ActiveMqPluginExtension)
 
-        project.task(type: StartActiveMqTask.class, 'startActiveMq')
+        project.task(type: StartActiveMqTask, 'startActiveMq')
     }
 }
