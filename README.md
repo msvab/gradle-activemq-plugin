@@ -1,0 +1,1 @@
+[![Build Status](https://secure.travis-ci.org/msvab/gradle-activemq-plugin.png)](http://travis-ci.org/msvab/gradle-activemq-plugin)
