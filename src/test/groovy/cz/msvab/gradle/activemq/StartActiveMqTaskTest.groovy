@@ -26,7 +26,7 @@ class StartActiveMqTaskTest {
         given(capturedLog.getName()).willReturn('MOCK')
         (LoggerFactory.getLogger(Task) as Logger).addAppender(capturedLog)
         // and
-        project.activemq.port = 42
+        project.activemq.port = 1
 
         // when
         project.startActiveMq.execute()
