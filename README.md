@@ -8,7 +8,7 @@ Plugin that starts embedded ActiveMQ. Can be useful for message based service in
 
 To use the plugin, include in your build script:
 ```groovy
-apply plugin: 'tomcat'
+apply plugin: 'activemq'
 ```
 
 ## Configuration options

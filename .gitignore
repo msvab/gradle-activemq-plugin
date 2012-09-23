@@ -1,3 +1,7 @@
 *.iml
 *.ipr
-activemq-data/**
+*.iws
+.gradle
+activemq-data
+out
+build
