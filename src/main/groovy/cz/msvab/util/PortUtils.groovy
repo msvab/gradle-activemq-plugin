@@ -11,7 +11,7 @@ class PortUtils {
             ss.setReuseAddress(true);
             ds = new DatagramSocket(port);
             ds.setReuseAddress(true);
-            return true;
+            return false;
         } catch (IOException e) {
         } finally {
             if (ds != null) {
@@ -25,6 +25,6 @@ class PortUtils {
             }
         }
 
-        return false;
+        return true;
     }
 }
