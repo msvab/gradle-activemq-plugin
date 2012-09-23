@@ -12,6 +12,10 @@ class LogBackMatchers {
         return isLogMessage(Level.WARN, msg)
     }
 
+    public static Matcher<LoggingEvent> isInfo(String msg) {
+        return isLogMessage(Level.INFO, msg)
+    }
+
     public static Matcher<LoggingEvent> isLogMessage(Level level, String msg) {
         return new TypeSafeDiagnosingMatcher<LoggingEvent>() {
             @Override
