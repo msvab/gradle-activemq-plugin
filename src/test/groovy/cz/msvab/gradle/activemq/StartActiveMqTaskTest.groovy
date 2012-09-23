@@ -7,6 +7,8 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
 import org.slf4j.LoggerFactory
 
+import java.util.concurrent.Executors
+
 import static cz.msvab.matcher.LogBackMatchers.isWarning
 import static java.lang.String.format
 import static org.mockito.BDDMockito.given
@@ -26,12 +28,20 @@ class StartActiveMqTaskTest {
         given(capturedLog.getName()).willReturn('MOCK')
         (LoggerFactory.getLogger(Task) as Logger).addAppender(capturedLog)
         // and
-        project.activemq.port = 1
+        project.activemq.port = blockSomePort()
 
         // when
         project.startActiveMq.execute()
 
         // then
         verify(capturedLog).doAppend(argThat(isWarning(format(StartActiveMqTask.PORT_IN_USE_MSG, project.activemq.port))))
+    }
+
+    int blockSomePort() {
+        def port = 44444
+        Executors.newSingleThreadExecutor().submit({
+            new ServerSocket(port).accept()
+        } as Runnable)
+        return port
     }
 }
