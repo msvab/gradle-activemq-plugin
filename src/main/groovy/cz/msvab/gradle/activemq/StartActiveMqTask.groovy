@@ -1,5 +1,6 @@
 package cz.msvab.gradle.activemq
 
+import cz.msvab.util.PortUtils
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
@@ -11,6 +12,8 @@ class StartActiveMqTask extends DefaultTask {
     @TaskAction
     void startActiveMq() {
         def config = project.activemq
-//        logger.warn(String.format(PORT_IN_USE_MSG, config.port))
+        if (PortUtils.isPortInUse(config.port as int)) {
+            logger.warn(String.format(PORT_IN_USE_MSG, config.port))
+        }
     }
 }
