@@ -25,7 +25,7 @@ class StartActiveMqTask extends DefaultTask {
 
     private void startBroker(ActiveMqPluginExtension config) {
         BrokerService broker = new BrokerService()
-        broker.addConnector("nio://localhost:$config.port")
+        broker.addConnector("$config.connector://localhost:$config.port")
         broker.start()
     }
 }

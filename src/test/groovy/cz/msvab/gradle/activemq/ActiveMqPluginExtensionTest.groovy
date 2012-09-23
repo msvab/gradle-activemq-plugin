@@ -16,5 +16,6 @@ public class ActiveMqPluginExtensionTest {
         // then
         assertThat(config.port, Matchers.is(61616))
         assertThat(config.enabled, Matchers.is(true))
+        assertThat(config.connector, Matchers.is('nio'))
     }
 }
