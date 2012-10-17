@@ -5,4 +5,5 @@ class ActiveMqPluginExtension {
     boolean enabled = true
     String connector = 'nio'
     boolean jmxEnabled = false
+    boolean purgeQueues = false
 }

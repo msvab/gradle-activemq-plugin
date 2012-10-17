@@ -16,3 +16,4 @@ apply plugin: 'activemq'
 * `enabled`: Enables embedded broker (default: true)
 * `connector`: Type of ActiveMQ connector that will be started (default: 'nio')
 * `jmxEnabled`: Enables JMX for embedded broker (default: false)
+* `purgeQueues`: When ActiveMQ is already running on given port, this will purge messages on all the queues (default: false)
